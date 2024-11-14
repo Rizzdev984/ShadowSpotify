@@ -1,0 +1,72 @@
+<html>
+ <head>
+  <title>Spotify Downloader</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+  <header class="bg-white shadow-md">
+   <div class="container mx-auto flex items-center justify-between p-4">
+    <div class="flex items-center">
+     <img alt="Logo" class="h-10 w-10" height="40" src="https://storage.googleapis.com/a1aa/image/fKNvMxQ1ILSHaK9M2M43FNhFeM7ThCb4zs5AIJehdbesHfGeE.jpg" width="40"/>
+     <span class="ml-2 text-xl font-bold">ShadowSpotify</span>
+    </div>
+   </div>
+  </header>
+  <main class="container mx-auto mt-8 p-4">
+   <section class="text-center">
+    <h1 class="text-3xl font-bold">
+     <span class="text-green-500">Spotify</span> Downloader
+    </h1>
+    <p class="mt-2 text-gray-600">Unduh musik dari Spotify dengan mudah.</p>
+    <div class="mt-4 flex justify-center">
+     <input id="urlInput" class="w-2/3 p-2 border border-gray-300 rounded-l-md" placeholder="Masukkan Kata Kunci atau URL Spotify e.g. https://open.spotify.com/track/7vtGOauV0Zz8Px5EJ" type="text"/>
+     <button onclick="mulaiUnduh()" class="bg-green-500 text-white px-4 py-2 rounded-r-md">Download</button>
+    </div>
+    <p class="mt-2 text-gray-600">
+     Coba pintasan baru kami :: <a class="text-blue-500" href="#">Bookmarklet</a> :: atau :: Ganti <a class="text-blue-500" href="#">open.spotify.com</a> dengan <a class="text-blue-500" href="#">ssspotify.buzz</a> di URL.
+    </p>
+    <!-- Animasi loading -->
+    <div id="loading" class="hidden mt-4 flex justify-center">
+     <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-16 w-16"></div>
+    </div>
+   </section>
+   <section class="mt-8 bg-white p-6 rounded-md shadow-md">
+    <h2 class="text-2xl font-bold">Cara Mengunduh Musik dari Spotify</h2>
+    <p class="mt-4 text-gray-700">Mengunduh musik dari Spotify sangat mudah dengan ssspotify. Ikuti tiga langkah sederhana berikut.</p>
+    <ul class="mt-4 list-disc list-inside text-gray-700">
+     <li class="mt-2"><strong>Salin Tautan di Spotify</strong><p class="ml-4">Tekan ikon Bagikan di bawah lagu Spotify, lalu pilih Salin Tautan dari opsi yang ada.</p></li>
+     <li class="mt-2"><strong>Tempel Tautan Spotify</strong><p class="ml-4">Tempel tautan yang disalin ke kolom di atas dan klik tombol Unduh.</p></li>
+     <li class="mt-2"><strong>Unduh musik Anda</strong><p class="ml-4">Klik tombol Unduh untuk mengunduh musik dengan mudah.</p></li>
+    </ul>
+    <p class="mt-4 text-gray-700">Jika Anda sering mengunduh musik dari Spotify, aplikasi pengunduh Spotify di ponsel Anda akan jauh lebih praktis.</p>
+   </section>
+  </main>
+
+  <!-- Gaya Animasi Loading -->
+  <style>
+   .loader {
+    border-top-color: #3490dc;
+    animation: spin 1s linear infinite;
+   }
+   @keyframes spin {
+    to {
+     transform: rotate(360deg);
+    }
+   }
+  </style>
+
+  <!-- JavaScript -->
+  <script>
+   function mulaiUnduh() {
+     const loadingElement = document.getElementById("loading");
+     loadingElement.classList.remove("hidden");
+
+     setTimeout(() => {
+       loadingElement.classList.add("hidden");
+       alert("Pengunduhan dimulai!");  // Simulasi pengunduhan selesai
+     }, 3000);  // Waktu simulasi pengunduhan 3 detik
+   }
+  </script>
+ </body>
+</html>
